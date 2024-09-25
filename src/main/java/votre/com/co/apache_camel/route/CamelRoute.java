@@ -43,7 +43,11 @@ public class CamelRoute extends RouteBuilder {
                 .consumes(MediaType.APPLICATION_JSON_VALUE)
                 .type(ResponseType.class)
                 .outType(ResponseType.class)
-                .to("direct:post-message");
+                .to("direct:post-message")
+        
+		        .get("/mybatis")
+		        .description("Methdo my batis")
+		        .to("direct:get-mybatis");
 
         from("direct:return-message")
                 .setBody(simple("Hello World ${header.name}"));
@@ -53,6 +57,10 @@ public class CamelRoute extends RouteBuilder {
 
         from("direct:post-message")
             .bean(helloBean, "postMessage( ${body})");
+        
+        from("direct:get-mybatis")
+        .to("mybatis:getCampaignRank?statementType=SelectOne");
+//        .to("mock:result");
 
     }
 

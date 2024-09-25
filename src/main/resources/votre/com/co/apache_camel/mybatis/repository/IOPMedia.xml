@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="votre.com.co.apache_camel.mybatis.repository.IOPMedia">
+	
+	<resultMap type="votre.com.co.apache_camel.mybatis.dto.CampaingRankDTO"
+		id="campaing">
+		<result column="MEDIAMIN" property="mediaMin" />
+		<result column="MEDIAMAX" property="mediaMax" />
+	</resultMap>
+
+	<select id="getCampaignRank" resultMap="campaing">
+        SELECT 
+            TRIM(MIN(MMMEDA)) AS MEDIAMIN, 
+            TRIM(MAX(MMMEDA)) AS MEDIAMAX 
+        FROM OPF001.PMAMED 
+        WHERE SUBSTR(MMMEDA, 1, 2) = SUBSTR('2414', 1, 2)
+    </select>
+
+</mapper>
