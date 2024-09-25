@@ -15,8 +15,8 @@
         SELECT 
             TRIM(MIN(MMMEDA)) AS MEDIAMIN, 
             TRIM(MAX(MMMEDA)) AS MEDIAMAX 
-        FROM OPF001.PMAMED 
-        WHERE SUBSTR(MMMEDA, 1, 2) = SUBSTR('2414', 1, 2)
+        FROM OPF${company}.PMAMED 
+        WHERE SUBSTR(MMMEDA, 1, 2) = SUBSTR(#{media}, 1, 2)
     </select>
 
 </mapper>

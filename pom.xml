@@ -23,6 +23,9 @@
 		<maven.compiler.target>21</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<camel.version>4.8.0</camel.version>
+		<jt400.version>20.0.7</jt400.version>
+		<camel.mybatis.version>4.8.0</camel.mybatis.version>
+		<mybatis.spring.boot.version>3.0.3</mybatis.spring.boot.version>
 	</properties>
 	
 	<dependencies>
@@ -72,19 +75,19 @@
 		<dependency>
 		    <groupId>org.mybatis.spring.boot</groupId>
 		    <artifactId>mybatis-spring-boot-starter</artifactId>
-		    <version>3.0.3</version>
+		    <version>${mybatis.spring.boot.version}</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>net.sf.jt400</groupId>
 			<artifactId>jt400</artifactId>
-			<version>20.0.7</version>
+			<version>${jt400.version}</version>
 		</dependency>
 		
 		<dependency>
 		    <groupId>org.apache.camel</groupId>
 		    <artifactId>camel-mybatis</artifactId>
-		    <version>4.8.0</version>
+		    <version>${camel.mybatis.version}</version>
 		</dependency>
 		
 	</dependencies>
